@@ -10,7 +10,8 @@ import Dashboard from "@/components/sections/Dashboard";
 import HowItWorks from "@/components/sections/HowitWorks";
 import CtaSection from "@/components/sections/CtaSection";
 import NewsSection from "@/components/sections/NewsSection";
-
+import Footer from "@/components/Footer";
+import Navbar from "@/components/Navbar";
 
 const itemVariants = {
   hidden: { opacity: 0, y: 20 },
@@ -220,6 +221,7 @@ export default function Home() {
 
   return (
     <main className="min-h-screen bg-white overflow-x-hidden">
+      <Navbar />
 
       <section id="hero">
         <HeroSection />
@@ -239,6 +241,7 @@ export default function Home() {
 
       <CtaSection />
 
+      <Footer />
     </main>
   );
 }
