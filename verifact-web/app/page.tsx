@@ -5,6 +5,11 @@ import { useState, useEffect } from "react";
 import { AlertTriangle, CheckCircle, Info, Shield } from "lucide-react";
 import { createClient } from "@/utils/supbase/client";
 import { storeUserData } from "./actions/auth";
+import HeroSection from "@/components/sections/HeroSection";
+import Dashboard from "@/components/sections/Dashboard";
+import HowItWorks from "@/components/sections/HowitWorks";
+import CtaSection from "@/components/sections/CtaSection";
+import NewsSection from "@/components/sections/NewsSection";
 
 
 const itemVariants = {
@@ -214,6 +219,26 @@ export default function Home() {
   };
 
   return (
-    <div> hi how are you</div>
+    <main className="min-h-screen bg-white overflow-x-hidden">
+
+      <section id="hero">
+        <HeroSection />
+      </section>
+
+      <section id="dashboard">
+        <Dashboard stats={stats} />
+      </section>
+
+      <section id="news">
+        <NewsSection news={news} />
+      </section>
+
+      <section id="how-it-works">
+        <HowItWorks />
+      </section>
+
+      <CtaSection />
+
+    </main>
   );
 }
