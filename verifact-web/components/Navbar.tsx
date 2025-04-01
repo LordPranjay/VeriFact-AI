@@ -59,13 +59,13 @@ export default function Navbar() {
     >
       <div className="container mx-auto px-4 flex justify-between items-center">
         <Link href="/" className="flex items-center gap-2 relative group">
-          <div className="absolute -inset-2 bg-emerald-100 rounded-full opacity-0 group-hover:opacity-100 transition-opacity duration-300 blur-md -z-10"></div>
-          <Shield className="h-6 w-6 text-emerald-600 transition-transform duration-300 group-hover:rotate-12" />
+          <div className="absolute -inset-2 bg-blue-100 rounded-full opacity-0 group-hover:opacity-100 transition-opacity duration-300 blur-md -z-10"></div>
+          <Shield className="h-6 w-6 text-blue-600 transition-transform duration-300 group-hover:rotate-12" />
           <span className="font-bold text-xl text-gray-900">
             VeriFact{" "}
-            <span className="text-emerald-600 relative">
+            <span className="text-blue-600 relative">
               AI
-              <span className="absolute -bottom-1 left-0 w-full h-0.5 bg-emerald-600 scale-x-0 group-hover:scale-x-100 transition-transform origin-left duration-300"></span>
+              <span className="absolute -bottom-1 left-0 w-full h-0.5 bg-blue-600 scale-x-0 group-hover:scale-x-100 transition-transform origin-left duration-300"></span>
             </span>
           </span>
         </Link>
@@ -80,13 +80,13 @@ export default function Navbar() {
               <span
                 className={`text-sm font-medium transition-colors duration-200 ${
                   activeSection === item.path
-                    ? "text-emerald-600"
-                    : "text-gray-600 hover:text-emerald-600"
+                    ? "text-blue-600"
+                    : "text-gray-600 hover:text-blue-600"
                 }`}
               >
                 {item.name}
                 <span
-                  className={`absolute -bottom-0.5 left-4 right-4 h-0.5 bg-emerald-600 transform origin-left transition-transform duration-300 ${
+                  className={`absolute -bottom-0.5 left-4 right-4 h-0.5 bg-blue-600 transform origin-left transition-transform duration-300 ${
                     activeSection === item.path
                       ? "scale-x-100"
                       : "scale-x-0 group-hover:scale-x-100"
@@ -102,7 +102,7 @@ export default function Navbar() {
 
           <Button
             onClick={toggleMobileMenu}
-            className="md:hidden p-2 rounded-md text-white bg-emerald-600 hover:text-emerald-600 hover:bg-emerald-50 focus:outline-none transition-colors duration-300"
+            className="md:hidden p-2 rounded-md text-white bg-blue-600  hover:text-blue-600 hover:bg-blue-50 focus:outline-none transition-colors duration-300"
             aria-label="Toggle menu"
           >
             <Menu className="h-6 w-6" />
@@ -112,7 +112,7 @@ export default function Navbar() {
 
       {/* Mobile menu */}
       <div
-        className={`md:hidden bg-white border-t border-emerald-100 shadow-lg transition-all duration-300 ease-in-out overflow-hidden ${
+        className={`md:hidden bg-white border-t border-blue-100 shadow-lg transition-all duration-300 ease-in-out overflow-hidden ${
           mobileMenuOpen ? "max-h-96 opacity-100" : "max-h-0 opacity-0"
         }`}
       >
@@ -133,13 +133,13 @@ export default function Navbar() {
               <span
                 className={`font-medium transition-colors duration-200 relative ${
                   activeSection === item.path
-                    ? "text-emerald-600"
-                    : "text-gray-600 hover:text-emerald-600"
+                    ? "text-blue-600"
+                    : "text-gray-600 hover:text-blue-600"
                 }`}
               >
                 {item.name}
                 <span
-                  className={`absolute -bottom-0.5 left-0 right-0 h-0.5 bg-emerald-600 transform origin-left transition-transform duration-300 ${
+                  className={`absolute -bottom-0.5 left-0 right-0 h-0.5 bg-blue-600 transform origin-left transition-transform duration-300 ${
                     activeSection === item.path
                       ? "scale-x-100"
                       : "scale-x-0 group-hover:scale-x-100"
