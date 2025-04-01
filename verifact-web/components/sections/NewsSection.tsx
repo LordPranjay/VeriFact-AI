@@ -96,7 +96,7 @@ const NewsSection = ({ news }: NewsProps) => {
       } = await supabase.auth.getUser();
       if (user) {
         const { data: userData } = await supabase
-          .from("user")
+          .from("users")
           .select("*")
           .eq("id", user.id)
           .single();
@@ -242,19 +242,19 @@ const NewsSection = ({ news }: NewsProps) => {
 
   return (
     <section className="container mx-auto px-4 sm:px-6 py-16 sm:py-20 relative">
-      <div className="absolute inset-0 bg-gradient-to-b from-emerald-50/50 to-transparent -z-10 pointer-events-none"></div>
+      <div className="absolute inset-0 bg-gradient-to-b from-blue-50/50 to-transparent -z-10 pointer-events-none"></div>
       <div className="flex flex-col md:flex-row md:items-center md:justify-between mb-12">
         <div className="relative mb-8 md:mb-0">
-          <div className="absolute -z-10 -inset-1 bg-gradient-to-r from-emerald-100 to-emerald-200 rounded-2xl blur-2xl opacity-30"></div>
+          <div className="absolute -z-10 -inset-1 bg-gradient-to-r from-blue-100 to-indigo-100 rounded-2xl blur-2xl opacity-30"></div>
           <div className="relative">
-            <span className="inline-block px-4 py-1.5 mb-3 text-xs font-medium text-emerald-700 bg-emerald-100 rounded-full">
+            <span className="inline-block px-4 py-1.5 mb-3 text-xs font-medium text-blue-700 bg-blue-100 rounded-full">
               AI-Powered Analysis
             </span>
             <h2 className="text-3xl md:text-4xl font-bold text-gray-900 relative">
               Recent{" "}
               <span className="relative inline-block">
-                <span className="relative z-10 text-emerald-600">News</span>
-                <span className="absolute bottom-1 left-0 w-full h-3 bg-emerald-100 rounded-md -z-10"></span>
+                <span className="relative z-10 text-blue-600">News</span>
+                <span className="absolute bottom-1 left-0 w-full h-3 bg-blue-100 rounded-md -z-10"></span>
               </span>{" "}
               Analysis
             </h2>
@@ -327,7 +327,7 @@ const NewsSection = ({ news }: NewsProps) => {
                           isFake
                             ? "bg-gradient-to-r from-red-500 to-red-600"
                             : isHighlyCredible
-                            ? "bg-gradient-to-r from-emerald-500 to-emerald-600"
+                            ? "bg-gradient-to-r from-green-500 to-green-600"
                             : "bg-gradient-to-r from-amber-500 to-amber-600"
                         }`}
                       >
@@ -355,7 +355,7 @@ const NewsSection = ({ news }: NewsProps) => {
                           isFake
                             ? "bg-white/90 text-red-600 border border-red-100"
                             : isHighlyCredible
-                            ? "bg-white/90 text-emerald-600 border border-emerald-100"
+                            ? "bg-white/90 text-green-600 border border-green-100"
                             : "bg-white/90 text-amber-600 border border-amber-100"
                         }`}
                       >
@@ -377,7 +377,7 @@ const NewsSection = ({ news }: NewsProps) => {
                             isFake
                               ? "bg-gradient-to-t from-red-900/70 via-transparent to-transparent"
                               : isHighlyCredible
-                              ? "bg-gradient-to-t from-emerald-900/70 via-transparent to-transparent"
+                              ? "bg-gradient-to-t from-green-900/70 via-transparent to-transparent"
                               : "bg-gradient-to-t from-amber-900/70 via-transparent to-transparent"
                           } opacity-60 group-hover:opacity-80 transition-opacity duration-300`}
                         ></div>
@@ -403,23 +403,17 @@ const NewsSection = ({ news }: NewsProps) => {
                         <Badge
                           className={`${getCategoryStyles(
                             category
-                          )} px-3 py-1.5 text-xs font-medium rounded-full shadow-sm border border-current/10`}
+                          )} px-3 py-1.5  text-xs font-medium rounded-full shadow-sm border border-current/10`}
                         >
-                          <h4>
-                            {(category || "General").split(" ").length > 4
-                              ? `${(category || "General")
-                                  .split(" ")
-                                  .slice(0, 4)
-                                  .join(" ")}...`
-                              : category || "General"}
-                          </h4>
+                          <h4>{(category || "General").split(' ').length > 4 ? `${(category || "General").split(' ').slice(0, 4).join(' ')}...` : category || "General"}</h4>
                         </Badge>
                       </div>
 
                       {/* Title and Description */}
                       <div className="flex-grow">
                         <h3
-                          className="text-lg font-semibold text-gray-900 group-hover:text-emerald-600 transition-colors duration-300 line-clamp-2 mt-1"
+                          className="text-lg font-semibold text-gray-900 group-hover:text-blue-600 
+                        transition-colors duration-300 line-clamp-2 mt-1"
                         >
                           {title?.length > 80
                             ? `${title.substring(0, 80)}...`
@@ -436,7 +430,7 @@ const NewsSection = ({ news }: NewsProps) => {
                           <Tooltip>
                             <TooltipTrigger>
                               {newsItem.media_presence === "true" ? (
-                                <div className="flex items-center text-sm font-medium text-emerald-600 bg-emerald-50 px-3 py-1 rounded-full">
+                                <div className="flex items-center text-sm font-medium text-blue-600 bg-blue-50 px-3 py-1 rounded-full">
                                   <CheckCircle className="h-4 w-4 mr-1.5" />
                                   Verified
                                 </div>
@@ -463,8 +457,8 @@ const NewsSection = ({ news }: NewsProps) => {
                                 className={`flex items-center gap-2 cursor-pointer rounded-full px-4 py-1.5 text-sm font-medium transition-all duration-300 ${
                                   currentUser &&
                                   votes[newsItem.id]?.includes(currentUser?.id)
-                                    ? "bg-gradient-to-r from-emerald-500 to-emerald-600 text-white hover:shadow-lg hover:shadow-emerald-100/50"
-                                    : "bg-gray-100 text-gray-700 hover:bg-emerald-50 hover:text-emerald-600 hover:border-emerald-200 border border-transparent"
+                                    ? "bg-gradient-to-r from-blue-500 to-blue-600 text-white hover:shadow-lg hover:shadow-blue-100/50"
+                                    : "bg-gray-100 text-gray-700 hover:bg-blue-50 hover:text-blue-600 hover:border-blue-200 border border-transparent"
                                 }`}
                                 aria-label="Vote for credibility"
                               >
@@ -487,9 +481,10 @@ const NewsSection = ({ news }: NewsProps) => {
                               <button
                                 onClick={(e) => {
                                   e.stopPropagation();
+                                  // window.open(newsItem.url, "_blank");
                                   handleOpenSource(newsItem);
                                 }}
-                                className="flex items-center cursor-pointer gap-2 rounded-full px-4 py-1.5 text-sm font-medium transition-all duration-300 bg-gray-100 text-gray-700 hover:bg-emerald-50 hover:text-emerald-600 hover:border-emerald-200 border border-transparent"
+                                className="flex items-center cursor-pointer gap-2 rounded-full px-4 py-1.5 text-sm font-medium transition-all duration-300 bg-gray-100 text-gray-700 hover:bg-blue-50 hover:text-blue-600 hover:border-blue-200 border border-transparent"
                                 aria-label="Open source"
                               >
                                 <span>Source</span>
@@ -525,7 +520,7 @@ const NewsSection = ({ news }: NewsProps) => {
                     className={`rounded-lg transition-all duration-300 ${
                       currentPage === 1
                         ? "opacity-50"
-                        : "hover:bg-emerald-50 hover:text-emerald-600"
+                        : "hover:bg-blue-50 hover:text-blue-600"
                     }`}
                   >
                     <ChevronLeft className="h-5 w-5" />
@@ -552,8 +547,8 @@ const NewsSection = ({ news }: NewsProps) => {
                             onClick={() => handlePageChange(pageNumber)}
                             className={`h-10 w-10 rounded-lg font-medium transition-all duration-300 ${
                               currentPage === pageNumber
-                                ? "bg-gradient-to-r from-emerald-500 to-emerald-600 text-white shadow-md shadow-emerald-100/50"
-                                : "hover:bg-emerald-50 hover:text-emerald-600"
+                                ? "bg-gradient-to-r from-blue-500 to-blue-600 text-white shadow-md shadow-blue-100/50"
+                                : "hover:bg-blue-50 hover:text-blue-600"
                             }`}
                           >
                             {pageNumber}
@@ -589,7 +584,7 @@ const NewsSection = ({ news }: NewsProps) => {
                     className={`rounded-lg transition-all duration-300 ${
                       currentPage === Math.ceil(news.length / ITEMS_PER_PAGE)
                         ? "opacity-50"
-                        : "hover:bg-emerald-50 hover:text-emerald-600"
+                        : "hover:bg-blue-50 hover:text-blue-600"
                     }`}
                   >
                     <ChevronRight className="h-5 w-5" />
