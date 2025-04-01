@@ -152,7 +152,7 @@ export default function Home() {
       .eq("isFake", "true");
 
     // Get active users count
-    const { data: users } = await supabase.from("user").select("*");
+    const { data: users } = await supabase.from("users").select("*");
 
     // Get accuracy rate based on isFake being false
     const { data: allNews } = await supabase.from("news").select("isFake");
