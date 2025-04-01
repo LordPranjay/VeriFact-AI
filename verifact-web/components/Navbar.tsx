@@ -1,7 +1,7 @@
 "use client";
 
 import { useState, useEffect } from "react";
-import { Menu, ChevronRight, Shield } from "lucide-react";
+import { Menu, ChevronRight, Shield, SearchCheck } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { AuthButton } from "@/components/auth-button";
 import Link from "next/link";
@@ -60,7 +60,7 @@ export default function Navbar() {
       <div className="container mx-auto px-4 flex justify-between items-center">
         <Link href="/" className="flex items-center gap-2 relative group">
           <div className="absolute -inset-2 bg-blue-100 rounded-full opacity-0 group-hover:opacity-100 transition-opacity duration-300 blur-md -z-10"></div>
-          <Shield className="h-6 w-6 text-blue-600 transition-transform duration-300 group-hover:rotate-12" />
+          <SearchCheck className="h-6 w-6 text-blue-600 transition-transform duration-300 group-hover:rotate-12" />
           <span className="font-bold text-xl text-gray-900">
             VeriFact{" "}
             <span className="text-blue-600 relative">
