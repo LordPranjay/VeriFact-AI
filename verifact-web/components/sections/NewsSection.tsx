@@ -184,33 +184,6 @@ const NewsSection = ({ news }: NewsProps) => {
     return item.subject_expertise || "Unknown";
   };
 
-  const formatDate = (dateString: any) => {
-    if (!dateString) return "Unknown date";
-    if (dateString.includes(",")) return dateString;
-
-    try {
-      const date = new Date(dateString);
-      const now = new Date();
-      const diffTime = Math.abs(now.getTime() - date.getTime());
-      const diffDays = Math.floor(diffTime / (1000 * 60 * 60 * 24));
-      const diffHours = Math.floor(diffTime / (1000 * 60 * 60));
-
-      if (diffHours < 24) {
-        return diffHours <= 1 ? "1 hour ago" : `${diffHours} hours ago`;
-      } else if (diffDays < 7) {
-        return diffDays === 1 ? "1 day ago" : `${diffDays} days ago`;
-      } else {
-        return date.toLocaleDateString("en-US", {
-          month: "short",
-          day: "numeric",
-          year: "numeric",
-        });
-      }
-    } catch (e) {
-      return dateString;
-    }
-  };
-
   const getCategoryStyles = (category: string) => {
     const styles = {
       "Fact-checking": "bg-purple-100 text-purple-700 hover:bg-purple-200",
@@ -385,8 +358,8 @@ const NewsSection = ({ news }: NewsProps) => {
                         <img
                           src={
                             isFake
-                              ? "https://i.pinimg.com/736x/6c/c0/08/6cc0087776f947c54ab23d9526898cfb.jpg"
-                              : "https://i.pinimg.com/736x/8b/46/0a/8b460ad19de8a97577b341308c368870.jpg"
+                              ? "/fake.png"
+                              : "/real.png"
                           }
                           alt={
                             isFake
