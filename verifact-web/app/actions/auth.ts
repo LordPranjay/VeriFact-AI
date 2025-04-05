@@ -14,7 +14,7 @@ export async function signInWithGoogle() {
         access_type: "offline",
         prompt: "consent",
       },
-      redirectTo: `http://localhost:3002/auth/callback`,
+      redirectTo: `https://verifactai.vercel.app/auth/callback`,
     },
   });
   console.log(data);
