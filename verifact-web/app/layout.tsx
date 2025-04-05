@@ -11,7 +11,7 @@ const inter = Inter({ subsets: ["latin"] });
 export const metadata: Metadata = { 
   title: "Verifact AI - Real-Time Fact Checking to Combat Misinformation",
   description:
-    "Verifact AI leverages real-time AI-powered analysis to detect and combat misinformation, empowering users with verified facts for informed decision-making in the digital age.",
+    "Verifact AI is a cutting-edge platform that leverages advanced AI algorithms to provide real-time fact-checking and misinformation detection across social media, news sites, and messaging platforms. Our mission is to empower users with accurate information and combat the spread of false narratives.",
 };
 
 export default function RootLayout({
