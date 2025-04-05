@@ -138,24 +138,6 @@ const PrivacyPolicy = () => {
             ))}
           </ul>
         </section>
-
-        {/* <section className="bg-white rounded-2xl p-8 shadow-lg hover:shadow-xl transition-shadow duration-300">
-          <div className="flex items-center gap-4 mb-6">
-            <div className="p-2 bg-blue-100 rounded-lg">
-              <Mail className="h-6 w-6 text-blue-600" />
-            </div>
-            <h2 className="text-2xl font-semibold text-gray-900">Contact Us</h2>
-          </div>
-          <p className="text-gray-600">
-            If you have any questions about this Privacy Policy, please contact us at:
-          </p>
-          <a
-            href="mailto:kartik.labhshetwar@gmail.com"
-            className="inline-block mt-4 text-blue-600 hover:text-blue-700 transition-colors duration-300 font-medium"
-          >
-            yprnanjg
-          </a>
-        </section> */}
       </div>
 
       <footer className="mt-12 text-center text-gray-500 text-sm">
