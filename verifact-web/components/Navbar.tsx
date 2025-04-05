@@ -31,6 +31,7 @@ export default function Navbar() {
     { name: "Dashboard", path: "/#dashboard" },
     { name: "News", path: "/#news" },
     { name: "How It Works", path: "/#how-it-works" },
+    { name: "Privacy", path: "/privacy" },
   ];
 
   const handleNavigation = (path: string) => {
