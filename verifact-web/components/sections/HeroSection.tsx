@@ -21,8 +21,10 @@ import { Button } from "@/components/ui/button";
 import { Badge } from "@/components/ui/badge";
 import { motion } from "framer-motion";
 import { staggerContainer, fadeIn, textVariant } from "@/utils/motion";
+import PopupDialog from "@/components/ui/popup-dialog";
 
 const HeroSection = () => {
+  const [isPopupOpen, setIsPopupOpen] = useState(false);
 
   const containerVariants = {
     hidden: { opacity: 0 },
@@ -36,11 +38,17 @@ const HeroSection = () => {
   };
 
   const handleInstallClick = () => {
-    window.open("x.com", "_blank");
+    setIsPopupOpen(true);
   };
 
   return (
     <section className="relative overflow-hidden pt-28 pb-20 md:pt-36 md:pb-32">
+        <PopupDialog
+        isOpen={isPopupOpen}
+        onClose={() => setIsPopupOpen(false)}
+        title="Extension Under Review"
+        message="The VeriFact AI extension is currently under review by the Chrome Web Store. We're working hard to make it available to you soon. Thank you for your patience and interest in fighting misinformation!"
+      />
       <motion.div
         variants={containerVariants}
         initial="hidden"

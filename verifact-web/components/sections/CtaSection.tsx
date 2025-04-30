@@ -16,15 +16,22 @@ import {
   ChevronRight,
 } from "lucide-react";
 import { Button } from "@/components/ui/button";
+import PopupDialog from "@/components/ui/popup-dialog";
 
 const CtaSection = () => {
-
+    const [isPopupOpen, setIsPopupOpen] = useState(false);
   const handleDownloadClick = () => {
-    window.open("x.com", "_blank");
+    setIsPopupOpen(true);
   };
 
   return (
     <section className="container mx-auto px-4 py-16 my-16">
+                <PopupDialog
+        isOpen={isPopupOpen}
+        onClose={() => setIsPopupOpen(false)}
+        title="Extension Under Review"
+        message="The VeriFact AI extension is currently under review by the Chrome Web Store. We're working hard to make it available to you soon. Thank you for your patience and interest in fighting misinformation!"
+      />
       <div className="bg-gradient-to-r from-blue-700 via-blue-600 to-blue-500 rounded-2xl p-10 md:p-14 shadow-xl overflow-hidden relative group">
         {/* Background effects */}
         <div className="absolute inset-0 overflow-hidden opacity-20">
