@@ -7,12 +7,12 @@ Verifact AI is an open-source, real-time fact-checking platform designed to dete
 - A web application (verifact-web)
 - A Chrome browser extension (verifact-extension)
 
----
-## Demo
 
-[![Watch the demo](https://img.youtube.com/vi/bQNepG3mrLM/0.jpg)](https://youtu.be/bQNepG3mrLM)
+## See Demo on youtube
 
----
+[![Watch the demo](/verifact-web/public/cover.png)](https://youtu.be/bQNepG3mrLM)
+
+
 
 ## Features
 
@@ -36,7 +36,7 @@ Verifact AI is an open-source, real-time fact-checking platform designed to dete
 | **AI Models**  | Google AI (Gemini)                    |
 | **Deployment** | Vercel                                |
 
----
+
 
 ## Using the Extension
 
@@ -50,7 +50,7 @@ Verifact AI is an open-source, real-time fact-checking platform designed to dete
    - Author verification
    - Cross-referenced sources
 
----
+
 
 ## Contributing
 
@@ -62,7 +62,7 @@ Contributions are welcome! Please:
 4. Push to the branch (`git push origin feature/my-feature`)
 5. Open a Pull Request
 
----
+
 
 ##  Acknowledgments
 
