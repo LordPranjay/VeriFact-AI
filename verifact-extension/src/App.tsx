@@ -88,7 +88,7 @@ export default function App() {
 
       if (data && data.length > 0) {
         const newId = data[0].id;
-        const postUrl = `http://localhost:3002/posts/${newId}`;
+        const postUrl = `https://verifactai.vercel.app/posts/${newId}`;
 
         setGeneratedUrl(postUrl);
 
