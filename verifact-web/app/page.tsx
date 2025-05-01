@@ -138,7 +138,6 @@ export default function Home() {
 
   const [statsData, setStatsData] = useState({
     propagandaCount: 0,
-    activeUsers: 0,
     accuracyRate: 0,
     sourcesVerified: 0,
   });
@@ -172,7 +171,6 @@ export default function Home() {
 
     setStatsData({
       propagandaCount: fakeNews?.length || 0,
-      activeUsers: users?.length || 0,
       accuracyRate: Number(accuracyPercentage),
       sourcesVerified: verifiedSources?.length || 0,
     });
@@ -188,11 +186,6 @@ export default function Home() {
       label: "Propaganda Detected",
       value: statsData.propagandaCount.toString(),
       icon: <AlertTriangle className="h-5 w-5" />,
-    },
-    {
-      label: "Active Users",
-      value: statsData.activeUsers.toString(),
-      icon: <CheckCircle className="h-5 w-5" />,
     },
     {
       label: "Accuracy Rate",
