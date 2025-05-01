@@ -427,8 +427,8 @@ export default function PostDetailPage() {
           <Image
             src={
               post.isFake === "true"
-                ? "https://i.pinimg.com/736x/6c/c0/08/6cc0087776f947c54ab23d9526898cfb.jpg"
-                : "https://i.pinimg.com/736x/8b/46/0a/8b460ad19de8a97577b341308c368870.jpg"
+                ? "/fake.png"
+                : "/real.png"
             }
             alt={post.title || "News verification"}
             layout="fill"
