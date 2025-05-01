@@ -188,7 +188,7 @@ export default function Home() {
       icon: <AlertTriangle className="h-5 w-5" />,
     },
     {
-      label: "Accuracy Rate",
+      label: "Accuracy of facts checked",
       value: `${statsData.accuracyRate}%`,
       icon: <Info className="h-5 w-5" />,
     },
